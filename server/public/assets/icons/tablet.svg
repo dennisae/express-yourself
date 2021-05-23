@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 768 1024" style="enable-background:new 0 0 768 1024;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#551CC4;}
+	.st1{fill:#8077FC;}
+</style>
+<g>
+	<path class="st0" d="M723,979H45V45h678V979 M768,999V25c0-13.8-11.2-25-25-25H25C11.2,0,0,11.2,0,25v974c0,13.8,11.2,25,25,25h718
+		C756.8,1024,768,1012.8,768,999L768,999z"/>
+</g>
+<path class="st0" d="M0,115V25C0,11.2,11.2,0,25,0h718c13.8,0,25,11.2,25,25v90H0z"/>
+<path class="st0" d="M0,999v-90h768v90c0,13.8-11.2,25-25,25H25C11.2,1024,0,1012.8,0,999z"/>
+<g>
+	<path class="st1" d="M406,966c0,12.1-9.9,22-22,22s-22-9.9-22-22s9.9-22,22-22S406,953.9,406,966 M414,966c0-16.6-13.4-30-30-30
+		l0,0c-16.6,0-30,13.4-30,30s13.4,30,30,30l0,0C400.6,996,414,982.6,414,966L414,966z"/>
+</g>
+<path class="st1" d="M377.5,57.5L377.5,57.5c0-3.9,3.1-7,7-7l0,0c3.9,0,7,3.1,7,7l0,0c0,3.9-3.1,7-7,7l0,0
+	C380.6,64.5,377.5,61.4,377.5,57.5z"/>
+<title>Asset 2</title>
+</svg>

@@ -1,0 +1,3477 @@
+@import 'reset';
+@import './fonts/fonts';
+
+/* --- COLORS --- */
+$white: #f4f4f4;
+$black: #232323;
+
+$bg: #ffc600;
+$textMain: #b78404;
+$titleShadow: #f2b406;
+
+$btnBg: #8b25ff;
+$btnShadow: #dd9f07;
+$infoBtnShadow: #551cc4;
+
+$inputBg: #f2b406;
+$inputShadow: #dd9f07;
+
+$videoBg: #ffc600;
+
+$errorBg: #fb474b;
+
+/* --- GENERAL --- */
+
+body {
+  font-family: 'din_rounded', 'Helvetica neue', Helvetica, Arial, sans-serif;
+  font-size: 2.1rem;
+  background: $bg;
+  color: $textMain;
+}
+
+.overlay {
+  display: none;
+}
+
+.smiley {
+  width: 3rem;
+  height: 3rem;
+  transform: rotate(10deg);
+  margin-left: 1rem;
+  box-shadow: 0 .25rem 0 0 $btnShadow;
+  border-radius: 100%;
+}
+
+.activeBorder {
+
+  &.active {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 1rem solid $btnBg;
+    z-index: 99999;
+  }
+}
+
+input[type=search]::-webkit-search-cancel-button {
+  appearance: searchfield-cancel-button;
+}
+
+input[type=range] {
+  appearance: none;
+  background: $inputBg;
+  box-shadow: inset 0 .5rem 0 0 $inputShadow;
+  border-radius: 10rem;
+  width: 48rem;
+  height: 1.5rem;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  appearance: none;
+  border: .5rem solid $btnBg;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background: $white;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+button,
+input {
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    outline: none;
+    background: none;
+  }
+}
+
+input[type=text],
+input[type=search],
+input[type=number] {
+  background-color: $inputBg;
+  box-shadow: inset 0 .5rem 0 0 $inputShadow;
+  border: none;
+  border-radius: 10rem;
+  padding: 0 4rem;
+  text-align: center;
+  font-size: 3.3rem;
+  font-weight: 500;
+  color: $white;
+  font-family: 'din_rounded', 'Helvetica neue', Helvetica, Arial, sans-serif;
+
+  &::placeholder {
+    color: $inputShadow;
+  }
+}
+
+button {
+  font-family: 'din_rounded', 'Helvetica neue', Helvetica, Arial, sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.btn {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  transition: all .3s ease;
+
+  position: relative;
+  top: 0;
+  opacity: 0;
+
+  text-decoration: none;
+
+  padding: 1.5rem 5rem 1.5rem 2.5rem;
+  margin: 0 1rem;
+
+  border: none;
+  border-radius: 10rem;
+
+  animation: .5s btn-fade-in ease;
+  animation-fill-mode: forwards;
+
+  background: $btnBg;
+  box-shadow: 0 .5rem 0 0 $btnShadow;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.disabled {
+    transition: all .4s ease;
+    opacity: .4;
+    animation-fill-mode: none;
+  }
+
+  .icon {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .text {
+    align-self: center;
+    margin-left: 2rem;
+    font-weight: bold;
+    font-size: 2.4rem;
+    color: $white;
+  }
+
+  &.iconBtn {
+    padding: 1rem;
+  }
+
+  &.backBtn {
+
+    padding: 1rem 3rem 1rem 1.5rem;
+    background: $titleShadow;
+
+    .icon {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .text {
+      position: relative;
+      top: 2px;
+      margin-left: 1rem;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.logo {
+  width: 90vw;
+  height: 36rem;
+  background: url(/assets/logo.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.smallIcon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.list-inline {
+  display: flex;
+  align-items: center;
+}
+
+.checked {
+  width: 2rem;
+  height: 2rem;
+}
+
+.fullPage {
+  width: 100vw;
+  height: 100vh;
+
+  min-width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+
+  overflow: hidden;
+}
+
+.title {
+  position: relative;
+  color: $white;
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+
+  &::before {
+    color: $titleShadow;
+    position: absolute;
+    top: .2rem;
+    z-index: -1;
+    left: 0;
+    -webkit-text-stroke: 1.5rem $titleShadow;
+  }
+}
+
+/* --- START --- */
+.start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+
+    .btn {
+      animation: none;
+      opacity: 1;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .or {
+    color: $textMain;
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 0 2rem;
+  }
+
+  .existing {
+    background: $inputBg;
+    padding: 1.5rem 4rem 1.5rem 1.5rem;
+
+    .text {
+      font-size: 2rem;
+    }
+
+    .icon {
+      transform: rotate(180deg);
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  .logo {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* --- INTRO --- */
+.intro {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .content {
+    width: 100%;
+    position: absolute;
+    bottom: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .contentText {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin-bottom: 8rem;
+    }
+  }
+
+  .buttons {
+    justify-content: center;
+    height: 8rem;
+  }
+
+  .subtitle {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5rem;
+  }
+
+  &.familyMembers {
+
+    .title {
+
+      &::before {
+        content: attr(data-before);
+      }
+    }
+
+    .memberBtn {
+      position: relative;
+
+      .icon {
+        width: 7rem;
+        height: 7rem;
+      }
+
+      &:first-child {
+        left: 5rem;
+      }
+
+      &:last-child {
+        right: 5rem;
+      }
+    }
+
+    .headerBg {
+      position: absolute;
+      top: 1rem;
+
+      width: 100%;
+      height: 32.5rem;
+
+      background: url(/assets/headers/familyMembers/bg.svg) no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .headerBgExtra {
+      position: relative;
+      height: 29.5rem;
+      opacity: 0;
+      left: -.5rem;
+
+      animation: .5s familyMembers-fade-in ease;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    .membersList {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6rem;
+
+      .member {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 10rem;
+        border: .5rem solid $textMain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: rgba(0, 0, 0, .5);
+        font-size: 4rem;
+        color: $white;
+        margin: 0 1rem;
+
+        animation: .4s member-pop ease;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  &.memberLanguages {
+
+    .headerBg {
+      position: absolute;
+
+      width: 100%;
+      height: 33rem;
+
+      background: url(/assets/headers/familyLanguages/bg.svg) no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .headerBgExtra {
+      position: relative;
+      height: 22rem;
+      top: 2rem;
+      z-index: -1;
+    }
+
+    .title {
+
+      margin-bottom: 2rem;
+
+      &::before {
+        content: attr(data-before);
+      }
+    }
+
+    .selectedLanguages {
+      margin-bottom: 5rem;
+      max-width: 80vw;
+      text-align: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .selectLanguages {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80vw;
+      margin-bottom: 2rem;
+    }
+
+    .searchLanguage {
+      width: 60rem;
+      overflow-y: scroll;
+      margin-top: 2rem;
+
+      .search {
+        width: 100%;
+        height: 6rem;
+        font-size: 1.8rem;
+        text-align: left;
+        padding: 0 3rem;
+
+        background-image: url(/assets/icons/search.svg);
+        background-repeat: no-repeat;
+        background-position: right 3rem center;
+        background-size: 2rem;
+      }
+    }
+
+    .searchResult {
+      min-height: 5.6rem;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .searchResult,
+    .locationResult,
+    .selectedLanguages {
+      margin: 2rem 0;
+
+      .flag {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: 1rem;
+      }
+
+      .item {
+        display: inline-block;
+        margin-right: 3rem;
+        opacity: 0;
+        height: 0;
+        max-width: 0;
+
+        animation: .5s show-language ease;
+        animation-fill-mode: forwards;
+      }
+
+      .language {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: $white;
+        padding: 1rem 3rem 1rem 1rem;
+        color: $black;
+        box-shadow: 0 .5rem 0 0 $btnShadow;
+        border-radius: 10rem;
+
+        margin-bottom: 1.5rem;
+
+        &::after {
+          position: absolute;
+          right: -1rem;
+          content: '';
+          min-width: 1rem;
+          min-height: 1rem;
+          padding: 1rem;
+          background-image: url(/assets/icons/add.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+      }
+
+      .checkbox:checked + .language::after {
+        background-image: url(/assets/icons/delete.svg);
+      }
+    }
+  }
+
+  &.memberAvatar {
+
+    .headerBg {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 30rem;
+
+      background: url(/assets/headers/memberAvatar/bg.svg);
+      background-repeat: repeat-x;
+      background-position: center top;
+      background-size: contain;
+    }
+
+    .avatars {
+      width: 100%;
+      justify-content: center;
+      margin: 3rem 0;
+    }
+
+    .formGroup {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .memberAge {
+      margin: 0 2rem;
+      width: 8rem;
+      height: 5rem;
+      text-align: center;
+      background: $inputBg;
+      box-shadow: inset 0 .5rem 0 0 $inputShadow;
+      border-radius: 10rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      color: $white;
+    }
+
+    .ageSlider {
+      height: 1.5rem;
+      background: $inputBg;
+    }
+
+    .possibleAvatarWrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      width: 10rem;
+      height: 10rem;
+      margin: 0 .5rem;
+    }
+
+    .checked {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, .75);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 10rem;
+
+      .icon {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    .possibleAvatar {
+      width: 10rem;
+      height: 10rem;
+    }
+
+    .avatarWrap {
+      position: relative;
+      border: 1rem solid $btnBg;
+      border-radius: 10rem;
+      width: 20rem;
+      height: 20rem;
+
+      .icon {
+        position: absolute;
+        top: -4rem;
+        right: 3rem;
+
+        width: 6.8rem;
+        height: 5.9rem;
+        background: url(/assets/headers/memberAvatar/crown.svg);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .avatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      font-size: 4rem;
+      color: $white;
+      background: rgba(0, 0, 0, .75);
+
+      width: 18rem;
+      height: 18rem;
+
+      border: 1rem solid $white;
+      border-radius: 10rem;
+    }
+  }
+
+  &.familyDetails {
+
+    .title {
+
+      margin-bottom: 4rem;
+
+      &::before {
+        content: attr(data-before);
+      }
+    }
+
+    .membersList {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 5rem;
+
+      .member {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+        color: $textMain;
+      }
+
+      .clickmeWrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 12rem;
+        height: 12rem;
+
+        margin: 0 1rem;
+        border-radius: 10rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .clickme {
+        position: relative;
+        width: 4rem;
+        height: 4rem;
+        top: -6rem;
+        border-radius: 10rem;
+        background-color: $textMain;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transform: scale(0);
+
+        animation: .4s popup ease;
+        animation-iteration-count: 1;
+        animation-delay: .5s;
+        animation-fill-mode: forwards;
+
+        .icon {
+          position: relative;
+          animation: 1s click-me ease;
+          animation-delay: 1.5s;
+          animation-iteration-count: infinite;
+          width: 2rem;
+          height: 2rem;
+          transform: rotate(-45deg);
+        }
+      }
+
+      .completed {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 12rem;
+        height: 12rem;
+
+        margin: 0 1rem;
+        border-radius: 10rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background: rgba(0, 0, 0, .75);
+
+        .icon {
+          position: relative;
+          top: -6rem;
+          width: 4rem;
+          height: 4rem;
+        }
+      }
+
+      .name {
+        margin-top: .5rem;
+      }
+
+      .avatar {
+        width: 12rem;
+        height: 12rem;
+        border-radius: 10rem;
+        border: .5rem solid $textMain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: rgba(0, 0, 0, .5);
+        font-size: 4rem;
+        color: $white;
+        margin: 0 1rem;
+      }
+
+      .avatarFound {
+        border: none;
+      }
+    }
+
+    .headerBg {
+      position: absolute;
+      top: 1rem;
+
+      width: 100%;
+      height: 33rem;
+
+      background: url(/assets/headers/familyDetails/bg.svg) no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .headerBgExtra {
+      position: relative;
+      height: 25rem;
+      opacity: 0;
+      left: -.5rem;
+
+      animation: .5s family-fade-in ease;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &.familyLanguages {
+
+    .title {
+
+      margin-bottom: 2rem;
+
+      &::before {
+        content: 'Family languages';
+      }
+    }
+
+    .headerBg {
+      position: absolute;
+
+      width: 100%;
+      height: 33rem;
+
+      background: url(/assets/headers/familyLanguages/bg.svg) no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .headerBgExtra {
+      position: relative;
+      height: 22rem;
+      top: 2rem;
+      z-index: -1;
+    }
+
+    .selectLanguages {
+      display: flex;
+      justify-content: space-between;
+      width: 80vw;
+      height: 20rem;
+      margin-bottom: 5rem;
+    }
+
+    .searchLanguage {
+      width: 40rem;
+      overflow-y: scroll;
+
+      .search {
+        height: 6rem;
+        width: 100%;
+        font-size: 1.8rem;
+        text-align: left;
+        padding: 0 3rem;
+
+        background-image: url(/assets/icons/search.svg);
+        background-repeat: no-repeat;
+        background-position: right 3rem center;
+        background-size: 2rem;
+      }
+
+      .searchResult {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .searchResult,
+    .locationResult,
+    .selectedLanguages {
+      margin-top: 2rem;
+
+      .flag {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: 1rem;
+      }
+
+      .item {
+        display: inline-block;
+        margin-right: 3rem;
+        opacity: 0;
+        height: 0;
+        max-width: 0;
+
+        animation: .5s show-language ease;
+        animation-fill-mode: forwards;
+      }
+
+      .language {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: $white;
+        padding: 1rem 3rem 1rem 1rem;
+        color: $black;
+        box-shadow: 0 .5rem 0 0 $btnShadow;
+        border-radius: 10rem;
+
+        margin-bottom: 1.5rem;
+
+        &::after {
+          position: absolute;
+          right: -1rem;
+          content: '';
+          min-width: 1rem;
+          min-height: 1rem;
+          padding: 1rem;
+          background-image: url(/assets/icons/add.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+        }
+      }
+
+      .checkbox:checked + .language::after {
+        background-image: url(/assets/icons/delete.svg);
+      }
+    }
+
+    .mostSpokenLanguage {
+      width: 50rem;
+      margin-right: 5rem;
+
+      .title {
+        font-size: 2.6rem;
+
+        &::before {
+          content: '';
+        }
+      }
+    }
+
+    .languagesDisabled {
+
+      .text {
+        margin-left: 1rem;
+      }
+    }
+
+    .selectedLanguages {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 5rem;
+      max-width: 80vw;
+      text-align: center;
+    }
+  }
+
+  &.allowLocation {
+
+    .headerBg {
+      position: absolute;
+      top: 1rem;
+
+      width: 100%;
+      height: 36rem;
+
+      background: url(/assets/headers/location/bg.svg) no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .headerBgExtra {
+      position: relative;
+      top: 8.5rem;
+      width: 43rem;
+      height: 28rem;
+      opacity: 0;
+
+      animation: .5s family-fade-in ease;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    .title {
+
+      &::before {
+        content: 'Country?';
+      }
+    }
+
+    .subtitle {
+
+      p:first-child {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .btnList {
+      width: 40rem;
+      justify-content: space-between;
+
+      .allowIcon {
+
+        &.animate {
+          animation: 1s loading ease;
+          animation-iteration-count: infinite;
+        }
+      }
+    }
+  }
+
+  &.familyName {
+
+    .headerBg {
+      position: absolute;
+      top: 0;
+
+      width: 100%;
+      height: 36rem;
+
+      background: url(/assets/headers/familyName/bg.svg) no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .headerBgExtra {
+      position: relative;
+      top: 8.5rem;
+      width: 43rem;
+      height: 27rem;
+      opacity: 0;
+
+      animation: .5s family-fade-in ease;
+      animation-delay: 1s;
+      animation-fill-mode: forwards;
+    }
+
+    .title {
+
+      &::before {
+        content: 'Family';
+      }
+    }
+  }
+
+  .textInput {
+    width: 70rem;
+    height: 8rem;
+  }
+}
+
+/* --- ACTIVITIES OVERVIEW --- */
+
+.activities {
+
+  .activity {
+    opacity: 0;
+    transform: scale(0);
+    animation: popup .4s, fade-in .4s;
+    animation-fill-mode: forwards, forwards;
+  }
+}
+
+.activities,
+.activityDetails {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 100%;
+  background: $bg;
+
+  .title {
+    text-align: center;
+    margin-top: 5rem;
+    z-index: 1;
+
+    &::before {
+      content: 'Activities';
+    }
+  }
+
+  .headerBg {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: url(/assets/activities/bg.svg) no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 14rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .cloud {
+    position: absolute;
+
+    background: url(/assets/activities/cloud.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 12rem;
+    height: 7rem;
+    opacity: 0;
+
+    z-index: -1;
+
+    animation: cloud-float;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &:nth-child(1) {
+      top: 1rem;
+    }
+
+    &:nth-child(2) {
+      top: 2rem;
+      animation-delay: 10s;
+      animation-duration: 38s;
+    }
+
+    &:nth-child(3) {
+      top: 1.5rem;
+      animation-delay: 15s;
+      animation-duration: 30s;
+    }
+
+    &:nth-child(4) {
+      top: .6rem;
+      animation-delay: 35s;
+      animation-duration: 20s;
+    }
+
+    &:nth-child(5) {
+      top: 1.25rem;
+      animation-delay: 24s;
+      animation-duration: 25s;
+    }
+  }
+
+  .activitiesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .cover {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 3rem;
+  }
+
+  .activity {
+    position: relative;
+    display: block;
+    width: 22rem;
+    height: 20rem;
+    border-radius: 2rem;
+    background: $btnBg;
+    box-shadow: 0 .5rem 0 0 $btnShadow;
+    margin: 2.5rem;
+
+    &.disabled {
+      opacity: .5;
+
+      .activityTitle {
+        font-size: 1.4rem;
+      }
+
+      .cover {
+        padding: 7rem;
+
+        .icon {
+          position: relative;
+          top: -3rem;
+        }
+      }
+    }
+  }
+
+  .activityTitle {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 7rem;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: url(/assets/activities/clouds.svg) no-repeat;
+    background-size: 23rem;
+    background-position: center 1.5rem;
+    border-radius: 0 0 2rem 2rem;
+
+    font-weight: bold;
+    text-align: center;
+    color: $btnBg;
+
+    .text {
+      position: relative;
+      top: 1.5rem;
+    }
+  }
+
+  .infoBtn {
+    position: absolute;
+    top: -1.5rem;
+    left: -1.5rem;
+
+    z-index: 5;
+
+    background: $btnBg;
+    box-shadow: 0 .4rem 0 0 $infoBtnShadow;
+
+    width: 5rem;
+    height: 5rem;
+    border-radius: 10rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 3rem;
+    text-align: center;
+    color: $white;
+    text-decoration: none;
+    font-weight: bold;
+
+    .text {
+      position: relative;
+      top: 3px;
+    }
+  }
+
+  .checkedBtn {
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+
+    padding: 8rem;
+    background: rgba(0, 0, 0, .85);
+
+    .icon {
+      position: relative;
+      top: -1rem;
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  .members {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .member {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    padding: 1rem;
+    background: $inputBg;
+    border-radius: 10rem;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    background: $inputBg;
+
+    .btn {
+      opacity: 1;
+      width: 8rem;
+      height: 8rem;
+      padding: 1rem;
+      background: $inputBg;
+      box-shadow: none;
+      animation: none;
+    }
+
+    .icon {
+      width: 100%;
+      height: 100%;
+      border-radius: 10rem;
+    }
+
+    .complete {
+      padding: 2rem;
+      background: #67c928;
+    }
+
+    .dl {
+      padding: 1.5rem;
+      background: $btnBg;
+    }
+
+    .content {
+      position: relative;
+      top: -5rem;
+      margin: 0 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.popup {
+  z-index: 99999999;
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+
+  animation: .4s fade-in ease;
+  animation-fill-mode: forwards;
+
+  background: rgba(0, 0, 0, .75);
+
+  .btn {
+
+    .text {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .title {
+    margin-top: 1rem;
+    z-index: 9999999999;
+
+    &::before {
+      content: attr(data-before);
+    }
+  }
+
+  .explanation {
+    line-height: 3rem;
+    margin: 0 2rem 3rem;
+    color: $textMain;
+  }
+
+  .close {
+    position: absolute;
+    top: -3rem;
+    right: -3rem;
+
+    .btn {
+      background: url(/assets/icons/close_2.svg) no-repeat;
+      background-position: center;
+      background-size: contain;
+      box-shadow: 0 .25rem 0 0 $btnShadow;
+
+      width: 6rem;
+      height: 6rem;
+
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .content {
+    position: relative;
+    width: 70rem;
+    height: auto;
+    background: $bg;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 1rem 0 0 $btnShadow;
+    border-radius: 2rem;
+
+    padding: 2rem;
+
+    animation: .4s popup ease;
+    animation-fill-mode: forwards;
+  }
+
+}
+
+/* --- ACTIVITY DETAILS --- */
+
+.activityDetails {
+
+  .details {
+    max-width: 75vw;
+    display: flex;
+    justify-content: center;
+    max-height: 70rem;
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+  }
+
+  .section {
+    margin-bottom: 2rem;
+    line-height: 3rem;
+
+    .title {
+      font-size: 2rem;
+      color: $btnBg;
+      margin: 0;
+      text-align: left;
+      background: none;
+
+      &::before {
+        content: '';
+      }
+    }
+  }
+
+  .sidebar {
+    min-width: 14rem;
+    margin-right: 5rem;
+
+    .btn {
+      margin: 0;
+      padding: 1rem 2rem 1rem 1rem;
+      animation: none;
+      opacity: 1;
+    }
+
+    .icon {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .text {
+      margin-left: 1rem;
+    }
+  }
+
+  .main {
+    overflow-y: scroll;
+  }
+
+  .header {
+    width: 100%;
+    height: 28rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $bg;
+
+    .title {
+      margin: 3rem 0 0;
+      z-index: 10;
+
+      &::before {
+        content: attr(data-before);
+      }
+    }
+
+    .bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 20rem;
+      background: url(/assets/activities/covers/bg.svg) no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    .cover {
+      padding: 1rem;
+      box-shadow: 0 1rem 0 0 $btnShadow;
+    }
+
+    .image {
+      height: 200%;
+      position: relative;
+      left: 5rem;
+    }
+  }
+
+  .closeBtn {
+    width: 5rem;
+    height: 5rem;
+
+    padding: 0;
+    margin: 2rem 2rem 0 0;
+
+    position: absolute;
+    right: 0;
+
+    z-index: 999;
+
+    background: url(/assets/icons/close_2.svg) no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    box-shadow: 0 .25rem 0 0 $btnShadow;
+  }
+}
+
+/* ACTIVITY: GENERAL */
+
+.activity {
+
+  .customiseActivity {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main {
+    width: 100%;
+    position: absolute;
+    bottom: 4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .contentText {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin-bottom: 8rem;
+    }
+  }
+
+  .closeBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 5rem;
+    height: 5rem;
+
+    padding: 0;
+    margin: 2rem 2rem 0 0;
+
+    z-index: 999;
+
+    background: url(/assets/icons/close_2.svg) no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    box-shadow: 0 .25rem 0 0 $btnShadow;
+  }
+}
+
+.introVideo {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $videoBg;
+
+  .header {
+    height: 12rem;
+    box-shadow: 0 .5rem 0 0 $btnShadow;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    width: 100%;
+    background: $bg;
+  }
+
+  .controls {
+    padding: 2rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    .left {
+      display: flex;
+      align-items: center;
+    }
+
+    .time {
+      margin-left: 2rem;
+      font-weight: bold;
+      color: $white;
+    }
+  }
+
+  .playBtn {
+
+    .btn {
+      margin: 0;
+      padding: 1rem;
+    }
+  }
+
+  .skipBtn {
+
+    .btn {
+      margin: 0;
+      padding: 1rem 3rem 1rem 1.5rem;
+      background: $bg;
+
+      .icon {
+        transform: rotate(180deg);
+        width: 3rem;
+        height: 3rem;
+      }
+
+      .text {
+        position: relative;
+        top: 2px;
+        margin-left: 1rem;
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: 0;
+
+    &::before {
+      content: attr(data-before);
+    }
+  }
+
+  .video {
+    width: 60%;
+    flex: 1;
+    background: $videoBg;
+  }
+}
+
+/* --- CUSTOMISE --- */
+
+.customiseAvatar {
+
+  position: relative;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  .title {
+
+    z-index: 5;
+
+    top: 7rem;
+    left: 0;
+
+    width: 70rem;
+    margin: 0 auto;
+
+    &::before {
+      content: 'Color your avatar !';
+    }
+  }
+
+  .headerBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: url(/assets/headers/customiseAvatar/bg.svg) no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .avatarsWrap {
+    position: relative;
+    left: 6rem;
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70rem;
+  }
+
+  .avatars {
+    position: relative;
+    bottom: 6rem;
+    width: 384px;
+    height: 485px;
+  }
+
+  .pedestal {
+    position: absolute;
+    bottom: -15rem;
+    right: 10rem;
+    background: url(/assets/activities/customise/pedestal.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 191px;
+    height: 23rem;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 70rem;
+    height: 8rem;
+
+    margin-top: 3rem;
+  }
+
+  .header {
+    position: relative;
+    width: 100%;
+    height: 19rem;
+  }
+
+  .colorLanguagesList {
+
+    position: relative;
+    left: 6rem;
+
+    display: flex;
+    flex-direction: column;
+
+    .language {
+      display: flex;
+      align-items: center;
+      align-self: flex-end;
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .languageColor {
+      width: 4rem;
+      height: 4rem;
+
+      border-radius: 100%;
+      background-color: #e0e0e0;
+      margin-left: .5rem;
+      border: .75rem solid $white;
+      box-shadow: 0 .25rem 0 0 $btnShadow;
+    }
+
+    .languageText {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: $white;
+      padding: 1rem 2rem 1rem 1rem;
+      color: $black;
+      box-shadow: 0 .25rem 0 0 $btnShadow;
+      border-radius: 10rem;
+    }
+
+    .flag {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+    }
+  }
+}
+
+.colorLanguages {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title {
+
+    z-index: 5;
+
+    &::before {
+      content: attr(data-before);
+    }
+  }
+
+  .dragIcon {
+    position: relative;
+
+    width: 3rem;
+    height: 3rem;
+    background: url(/assets/icons/drag.svg) no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    transform: rotate(-90deg);
+    animation: 1.5s drag-language ease;
+    animation-iteration-count: infinite;
+  }
+
+  .colorLanguagesList {
+
+    display: flex;
+    flex-direction: column;
+
+    .language {
+      display: flex;
+      align-items: center;
+      align-self: flex-end;
+
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .languageColor {
+      width: 4rem;
+      height: 4rem;
+
+      border-radius: 100%;
+      background-color: #e0e0e0;
+      margin-left: .5rem;
+      border: .75rem solid $white;
+      box-shadow: 0 .25rem 0 0 $btnShadow;
+    }
+
+    .languageText {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: $white;
+      padding: 1rem 2rem 1rem 1rem;
+      color: $black;
+      box-shadow: 0 .25rem 0 0 $btnShadow;
+      border-radius: 10rem;
+    }
+
+    .flag {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+    }
+  }
+
+  .headerBg {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+
+    width: 100%;
+    height: 24rem;
+
+    background: url(/assets/headers/pickPlayers/bg.svg) no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .headerBgExtra {
+    position: relative;
+    height: 17rem;
+    opacity: 1;
+
+    top: 8.5rem;
+    left: -.5rem;
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 70rem;
+  }
+
+  .possibleColorList {
+    width: 40rem;
+    height: 20rem;
+    display: block;
+  }
+
+  .possibleColor {
+    transition: all .4s ease;
+
+    opacity: 1;
+    margin: 1rem;
+    float: left;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 2rem;
+    box-shadow: 0 .5rem 0 0 $btnShadow;
+
+    &.inactive {
+      opacity: .25;
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 80rem;
+    height: 8rem;
+
+    margin-top: 3rem;
+
+  }
+}
+
+.pickPlayers {
+
+  .title {
+
+    &::before {
+      content: attr(data-before);
+    }
+  }
+
+  .drawingsOverview {
+
+    animation: .4s fade-in ease;
+    animation-fill-mode: forwards;
+
+    display: flex;
+
+    .mainDrawing {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .drawingMembers {
+      display: flex;
+      justify-content: center;
+
+      .drawingMember {
+        margin: 0 1rem;
+        display: flex;
+        align-items: center;
+
+        position: relative;
+        left: -1rem;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      .name {
+        margin-left: .5rem;
+      }
+
+      .avatar {
+        width: 5rem;
+        height: 5rem;
+      }
+
+      .color {
+        position: relative;
+        left: 1rem;
+        width: 2rem;
+        height: 2rem;
+        border: .25rem solid $white;
+        border-radius: 100%;
+      }
+    }
+
+    .mainDrawingWrap {
+      width: 80vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .title {
+        top: 0;
+        align-self: center;
+
+        &::before {
+          content: attr(data-before);
+        }
+      }
+    }
+
+    .drawings {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 20vw;
+
+      padding: 2rem;
+      background: $bg;
+
+      position: relative;
+      overflow-y: scroll;
+
+      border-right: 1rem solid $btnShadow;
+    }
+
+    .drawingWrap {
+      display: block;
+      margin: 1rem 0;
+
+      position: relative;
+      width: 100%;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .footer {
+      display: flex;
+      margin-top: 2rem;
+      justify-content: space-between;
+    }
+
+    .date {
+      display: flex;
+      align-items: center;
+      background: $inputBg;
+      padding: 1rem 1.5rem;
+      border-radius: 10rem;
+      font-size: 1.6rem;
+      height: 4rem;
+      box-shadow: 0 .25rem 0 0 $inputShadow;
+    }
+
+    .selectedDrawing {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(/assets/icons/check.svg) no-repeat;
+      background-size: 3rem;
+      background-position: center;
+    }
+
+    .drawing {
+      width: 100%;
+    }
+  }
+
+  .customAvatarsOverview {
+
+    animation: .4s fade-in ease;
+    animation-fill-mode: forwards;
+
+    .customOverviewAvatar {
+      position: relative;
+      left: 3px;
+    }
+
+    .avatarWrap {
+      display: flex;
+      flex-direction: column;
+      margin: 0 2rem;
+    }
+
+    .avatar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .name {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .avatarLanguages {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+
+      .language {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      .languageColor {
+        width: 4rem;
+        height: 4rem;
+
+        border-radius: 100%;
+        background-color: #e0e0e0;
+        margin-right: .5rem;
+        border: .75rem solid $white;
+        box-shadow: 0 .25rem 0 0 $btnShadow;
+      }
+
+      .languageText {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: $white;
+        padding: 1rem 2rem 1rem 1rem;
+        color: $black;
+        box-shadow: 0 .25rem 0 0 $btnShadow;
+        border-radius: 10rem;
+      }
+
+      .flag {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .completed {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 12rem;
+    height: 0;
+
+    border-radius: 10rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, .75);
+
+    .icon {
+      position: relative;
+      top: 0;
+      width: 4rem;
+      height: 4rem;
+      z-index: 999991;
+    }
+  }
+
+  .headerBg {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+
+    width: 100%;
+    height: 24rem;
+
+    background: url(/assets/headers/pickPlayers/bg.svg) no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .headerBgExtra {
+    position: relative;
+    height: 17rem;
+    opacity: 0;
+    margin-top: 5rem;
+    left: -.5rem;
+
+    animation: .5s familyMembers-fade-in ease;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  .dragmeWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 12rem;
+    height: 12rem;
+
+    border-radius: 10rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dragme {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    top: -6rem;
+    border-radius: 10rem;
+    background-color: $textMain;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      position: relative;
+      animation: 1s drag-me ease;
+      animation-iteration-count: infinite;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .members {
+    margin: 3rem 0;
+  }
+
+  .member {
+    position: relative;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .avatarWrap {
+      z-index: 99999;
+      background: $inputBg;
+      border-radius: 10rem;
+    }
+
+    .avatar {
+      width: 12rem;
+      height: 12rem;
+    }
+
+    .name {
+      margin-top: .5rem;
+    }
+  }
+
+  .avatarBtn {
+
+    &.disabled {
+      opacity: .4;
+      animation: none;
+    }
+  }
+
+  .dropzones {
+    margin: 0 4rem;
+  }
+
+  .dropzone {
+    width: 12rem;
+    height: 12rem;
+
+    margin: 0 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: $inputBg;
+    box-shadow: inset 0 .5rem 0 0 $inputShadow;
+    border-radius: 10rem;
+
+    .inner {
+      z-index: 9;
+      width: 9rem;
+      height: 9rem;
+
+      border: .4rem solid $inputShadow;
+      border-style: dashed;
+      border-radius: 10rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      color: $inputShadow;
+    }
+
+    &.drop-active {
+      transition: all .3s ease;
+
+      .inner {
+        z-index: 9;
+        opacity: 0;
+        background: #57db36;
+        color: $white;
+        animation: 1s member-dropzone ease;
+        animation-iteration-count: infinite;
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.playing {
+
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .name {
+    background: $inputBg;
+    color: $white;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    animation: none;
+    opacity: 1;
+  }
+
+  .avatar {
+    position: absolute;
+    top: -1rem;
+    right: -2rem;
+    width: 7rem;
+    height: 7rem;
+    z-index: 5;
+  }
+}
+
+.confirmationBox,
+.customAvatarsOverview,
+.drawingsOverview {
+  z-index: 99999999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .8);
+  color: $white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.draggable {
+  z-index: 99999;
+
+  &.dragging {
+    z-index: 999999;
+  }
+}
+
+/* --- CUSTOMISE --- */
+
+.customOverviewAvatar {
+
+  .armLeft {
+    transform: translate(6rem, 6rem);
+  }
+
+  .armRight {
+    transform: translate(-7rem, 6rem);
+  }
+
+  .head,
+  .ear,
+  .mouth,
+  .cheeck,
+  .braw,
+  .eye,
+  .nose,
+  .teeth,
+  .tongue {
+    transform: translate(0, 12rem);
+  }
+
+  .body,
+  .pants,
+  .nipple,
+  .bellybutton {
+    transform: translate(0, 6rem);
+  }
+}
+
+.customAvatar {
+
+  position: absolute;
+  transition: all .5s ease;
+
+  .dropzone {
+    transition: all .5s ease;
+
+    path,
+    ellipse,
+    circle {
+      transition: all .5s ease;
+    }
+  }
+
+  &.interactable {
+    opacity: 0;
+  }
+
+  &.nonInteractable {
+
+    .armLeft {
+      transform: translate(6rem, 6rem);
+
+      &.drop-active {
+        transform: translate(0, 0);
+      }
+    }
+
+    .armRight {
+      transform: translate(-7rem, 6rem);
+
+      &.drop-active {
+        transform: translate(0, 0);
+      }
+    }
+
+    .head,
+    .ear,
+    .mouth,
+    .cheeck,
+    .braw,
+    .eye,
+    .nose,
+    .teeth,
+    .tongue {
+      transform: translate(0, 12rem);
+
+      &.drop-active {
+        transform: translate(0, 0);
+      }
+    }
+
+    .body,
+    .pants,
+    .nipple,
+    .bellybutton {
+      transform: translate(0, 6rem);
+
+      &.drop-active {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+.nextWrap {
+  height: 8rem;
+}
+
+.appLanguages {
+
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  z-index: 99999;
+
+  .all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    transition: all .3s ease-out;
+
+    padding: .5rem 0;
+
+    top: -24rem;
+    border-radius: 10rem;
+
+    .flag {
+      padding: .5rem;
+      border-radius: 10rem;
+    }
+
+    .text {
+      font-size: 1.6rem;
+    }
+
+    .language {
+      display: flex;
+      align-items: center;
+
+      margin-bottom: 1rem;
+      background: $inputShadow;
+      border-radius: 10rem;
+
+      &:first-child {
+        background: $white;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  .current {
+    display: flex;
+    align-items: center;
+    align-self: center;
+
+    background: $inputBg;
+    padding: .5rem;
+    border-radius: 10rem;
+
+    z-index: 5;
+  }
+
+  .flag {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+/* --- NO MATCH --- */
+
+.noMatch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logo {
+    height: 18rem;
+    margin-bottom: 4rem;
+  }
+
+  .title {
+
+    &::before {
+      content: attr(data-before);
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .btn {
+      margin-top: 5rem;
+      background: $inputBg;
+    }
+  }
+}
+
+.globalMessage {
+  position: relative;
+  height: 0;
+
+  z-index: 99999;
+
+  top: -8.5rem;
+
+  transition: all .4s ease;
+
+  .message {
+    background: $inputBg;
+    color: $white;
+    text-align: center;
+    width: 100%;
+    height: 8rem;
+    font-size: 2.6rem;
+    font-weight: bold;
+    box-shadow: 0 .5rem 0 0 $btnShadow;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.show {
+    top: 0;
+  }
+}
+
+.selectedPlayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+
+    &::before {
+      content: attr(data-before);
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 100%;
+    background: $inputBg;
+    padding: 1rem;
+  }
+}
+
+.wait {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .headerBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 33rem;
+
+    background: url(/assets/headers/waitSession/bg.svg) no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: -1;
+  }
+
+  .title {
+
+    &::before {
+      content: attr(data-before);
+    }
+  }
+
+  .footer {
+    position: absolute;
+    padding: 2rem;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .left {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .devices {
+    display: flex;
+    align-items: center;
+
+    .list {
+      display: flex;
+      justify-content: center;
+      margin-left: 1rem;
+    }
+
+    .deviceWrap {
+      background: $btnBg;
+      padding: .5rem;
+      border-radius: 10rem;
+      margin: 0 .5rem;
+      width: 5rem;
+      height: 5rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .roomWrap {
+
+    display: flex;
+    align-items: center;
+    margin-right: 4rem;
+
+    .code {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+
+      padding: 1rem 2rem;
+      border-radius: 10rem;
+
+      background: $inputBg;
+      box-shadow: 0 .5rem 0 0 $btnShadow;
+      color: $white;
+
+      margin-left: 1rem;
+
+      font-size: 2.6rem;
+      font-weight: bold;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    top: 5rem;
+  }
+
+  .btn {
+    animation: none;
+    opacity: 1;
+    max-width: 50rem;
+    height: 7rem;
+    padding: .5rem 3rem .5rem 1.5rem;
+    margin: 0;
+
+    background: $errorBg;
+
+    box-shadow: 0 .25rem 0 0 $btnShadow;
+
+    .icon {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .text {
+      font-size: 2rem;
+    }
+  }
+}
+
+/* --- JOIN --- */
+
+.join {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .joinContentWrap {
+    position: relative;
+    top: 11rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .headerBg {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 33rem;
+
+    background: url(/assets/headers/joinSession/bg.svg) no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: -1;
+  }
+
+  .title {
+
+    &::before {
+      content: attr(data-before);
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .codeWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+  }
+
+  .code {
+    width: 30rem;
+    height: 8rem;
+  }
+
+  .codeInput {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+
+    .btn {
+      padding: 1.5rem;
+      animation: none;
+      opacity: 1;
+    }
+  }
+
+  .error {
+    color: $errorBg;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 2rem;
+
+    transition: all .4s ease;
+
+    .text {
+      margin-left: 1rem;
+    }
+
+    .icon {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &.showError {
+      opacity: 1;
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .backBtn {
+    margin-bottom: 4rem;
+  }
+}
+
+/* --- DRAW --- */
+
+.showSessionCode {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .headerBg {
+    position: absolute;
+    top: -6rem;
+
+    width: 100%;
+    height: 37rem;
+
+    background: url(/assets/headers/draw/selectDevices/bg.svg) no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .titleWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 0;
+  }
+
+  .title {
+    position: relative;
+    top: 32rem;
+    z-index: 5;
+
+    &::before {
+      content: attr(data-before);
+    }
+  }
+
+  .code {
+    background: $inputBg;
+    padding: 2rem 6rem;
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: $white;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 10rem;
+  }
+
+  .explanation {
+    max-width: 45rem;
+    text-align: center;
+    line-height: 3rem;
+  }
+
+  .connected {
+    position: absolute;
+    bottom: 4rem;
+    left: 4rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: $btnBg;
+
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+
+    padding: 1rem;
+
+    .icon {
+      background: url(/assets/icons/device.svg) no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 100%;
+      height: 100%;
+    }
+
+    .text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: $white;
+      border-radius: 100%;
+      width: 3rem;
+      height: 3rem;
+      background: $errorBg;
+      font-size: 1.6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 4rem;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.subject {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .headerBg {
+    position: absolute;
+    top: -6rem;
+    left: 0;
+
+    width: 100%;
+    height: 37rem;
+
+    background: url(/assets/headers/draw/selectDevices/bg.svg) no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .titleWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 0;
+  }
+
+  .title {
+    position: relative;
+    top: 32rem;
+    z-index: 5;
+
+    &::before {
+      content: attr(data-before);
+    }
+  }
+
+  .proposedSubjects {
+    display: flex;
+    align-items: center;
+
+    .proposedSubject {
+      margin: 0 1rem;
+      padding: 1.5rem 2.5rem;
+      font-size: 2.4rem;
+      color: $white;
+      font-weight: bold;
+    }
+  }
+
+  .or {
+    margin: 4rem 0;
+    font-size: 1.6rem;
+  }
+
+  .submitSubject {
+    height: 8rem;
+
+    .text {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .customSubject {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .input {
+      width: 40rem;
+      height: 7rem;
+      font-size: 2.4rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .content {
+    position: absolute;
+    bottom: 4rem;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.selectDevices {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .headerBg {
+    position: absolute;
+    top: -6rem;
+    left: 0;
+
+    width: 100%;
+    height: 37rem;
+
+    background: url(/assets/headers/draw/selectDevices/bg.svg) no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .iconBtn {
+
+    .icon {
+      width: 15rem;
+      height: 15rem;
+    }
+  }
+
+  .titleWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 0;
+  }
+
+  .title {
+    position: relative;
+    top: 32rem;
+    z-index: 5;
+
+    &::before {
+      content: attr(data-before);
+    }
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 10rem;
+  }
+
+  .or {
+    font-size: 1.8rem;
+  }
+
+  .possibleDevice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5rem;
+
+    .text {
+      margin-top: 2rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.pictionaryActivity {
+
+  &.pickPlayers {
+
+    .titleWrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 0;
+    }
+
+    .title {
+      position: relative;
+      top: 32rem;
+      z-index: 5;
+    }
+
+    .headerBg {
+      position: absolute;
+      top: -6rem;
+      left: 0;
+
+      width: 100%;
+      height: 37rem;
+
+      background: url(/assets/headers/draw/selectDevices/bg.svg) no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
+}
+
+.draw {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .beforeTitle {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .title {
+
+      z-index: 5;
+
+      &::before {
+        content: attr(data-before);
+      }
+    }
+  }
+
+  .tools {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+
+    height: 100%;
+    width: 8rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .clearCanvas {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+
+    .icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .brushSizeWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem 0;
+
+    .brush {
+      background: $btnShadow;
+      border-radius: 100%;
+    }
+
+    .largeBrush {
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .smallBrush {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  .brushSize {
+    transform: rotate(270deg);
+    margin: 10rem 0;
+    width: 20rem;
+
+    &:focus {
+      background: $inputBg;
+    }
+  }
+
+  .players {
+    position: absolute;
+    top: 0;
+    right: 3rem;
+
+    height: 100%;
+    width: 8rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .player {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+
+    margin-bottom: 3rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .avatar {
+      width: 8rem;
+      height: 8rem;
+
+      border-radius: 100%;
+      box-shadow: 0 .5rem 0 0 $btnShadow;
+    }
+
+    .color {
+      position: absolute;
+      top: -1rem;
+      right: 0;
+
+      border-radius: 100%;
+
+      width: 3rem;
+      height: 3rem;
+      border: .5rem solid $white;
+    }
+  }
+
+  .playing {
+    position: absolute;
+    bottom: 4rem;
+    right: 6rem;
+  }
+
+  .canvasWrap {
+    background: white;
+    border: 1rem solid $inputBg;
+
+    width: 72rem;
+    height: 54rem;
+  }
+
+  .varia {
+
+    width: 0;
+    height: 0;
+    position: relative;
+    z-index: -1;
+
+    .pencil {
+      position: absolute;
+      bottom: -14rem;
+      right: 27rem;
+      background: url(/assets/varia/pencil.svg) no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      width: 25rem;
+      height: 17rem;
+      transform: rotate(63deg);
+    }
+
+    .brush {
+      position: absolute;
+      bottom: 59rem;
+      left: -19rem;
+      background: url(/assets/varia/brush.svg) no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      width: 30rem;
+      height: 18rem;
+      transform: rotate(-33deg);
+    }
+  }
+
+  .canvas {
+    cursor: pointer;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+/* --- ANIMATIONS --- */
+@import 'animations';
+
+/* --- QUERIES --- */
+
+/* warning overlay if not using tablet or portrait mode */
+@media all and (max-width: 1023px) {
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999999999999;
+
+    font-size: 2rem;
+    color: $white;
+    text-align: center;
+    line-height: 3rem;
+
+    .tabletWrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      margin-bottom: 8rem;
+    }
+
+    .right {
+      background: url(/assets/icons/check.svg) no-repeat;
+
+      animation: 6s right-wrong ease;
+      animation-iteration-count: infinite;
+      animation-delay: 3s;
+    }
+
+    .wrong {
+      background: url(/assets/icons/close.svg) no-repeat;
+
+      animation: 6s right-wrong ease;
+      animation-iteration-count: infinite;
+    }
+
+    .right,
+    .wrong {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      opacity: 0;
+
+      background-size: 6rem;
+      background-position: center;
+    }
+
+    .tablet {
+      width: 50vw;
+      max-width: 25rem;
+      height: auto;
+
+      animation: 6s tablet-rotate ease;
+      animation-iteration-count: infinite;
+    }
+
+    &.error {
+      background: $bg;
+    }
+
+    .text {
+      max-width: 50rem;
+      width: 90vw;
+    }
+
+    .bold {
+      color: $textMain;
+    }
+  }
+}

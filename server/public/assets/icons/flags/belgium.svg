@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 347.1 347.1" style="enable-background:new 0 0 347.1 347.1;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;clip-path:url(#SVGID_2_);}
+	.st1{display:inline;fill:#00247D;}
+	.st2{display:inline;}
+	.st3{fill:#F5F5F5;}
+	.st4{fill:#CF142B;}
+	.st5{clip-path:url(#SVGID_2_);}
+	.st6{fill:#FAE042;}
+	.st7{fill:#ED2939;}
+</style>
+<g>
+	<defs>
+		<path id="SVGID_1_" d="M173.6,341.1C81.2,341.1,6,265.9,6,173.5S81.2,6,173.6,6s167.5,75.2,167.5,167.5S265.9,341.1,173.6,341.1z"
+			/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<g class="st0">
+		<path class="st1" d="M173.6,347.1L173.6,347.1C77.7,347.1,0,269.4,0,173.6v0C0,77.7,77.7,0,173.5,0h0
+			c95.8,0,173.5,77.7,173.5,173.5v0C347.1,269.4,269.4,347.1,173.6,347.1z"/>
+		<g class="st2">
+			<path class="st3" d="M416.9,2.3h-31.3l-167,109.4V2.3h-90.1v109.4L-38.5,2.3h-31.3c-10,0-18,8.1-18,18v14.3l143.3,93.9H-87.8
+				v90.1H55.4l-143.3,93.9v14.3c0,10,8.1,18,18,18h31.3l167-109.4v109.4h90.1V235.4l167,109.4h31.3c10,0,18-8.1,18-18v-14.3
+				l-143.3-93.9h143.3v-90.1H291.7l143.3-93.9V20.3C434.9,10.4,426.9,2.3,416.9,2.3z"/>
+			<g>
+				<polygon class="st4" points="434.9,146.5 200.6,146.5 200.6,2.3 146.5,2.3 146.5,146.5 -87.8,146.5 -87.8,200.6 146.5,200.6 
+					146.5,344.8 200.6,344.8 200.6,200.6 434.9,200.6 				"/>
+				<path class="st4" d="M110.5,128.5L-79.2,5.4c-5,3.2-8.6,8.6-8.6,15v0.9L77.4,128.5H110.5z"/>
+				<path class="st4" d="M251.7,128.5L432.2,11.3c-3.1-5.3-8.7-9-15.3-9H413L218.6,128.5H251.7z"/>
+				<path class="st4" d="M94.9,218.6L-85.2,335.5c3.1,5.4,8.7,9.3,15.4,9.3h3.4L128,218.6H94.9z"/>
+				<path class="st4" d="M434.6,328.2L265.8,218.6h-33.1L424.4,343C430.2,340.4,434.1,334.8,434.6,328.2z"/>
+			</g>
+		</g>
+	</g>
+	<g class="st5">
+		<rect x="116.7" y="-49.7" class="st6" width="113.8" height="446.6"/>
+		<rect x="230.4" y="-49.7" class="st7" width="113.8" height="446.6"/>
+		<rect x="2.9" y="-49.7" width="113.8" height="446.6"/>
+	</g>
+</g>
+</svg>

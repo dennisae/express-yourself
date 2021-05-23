@@ -1,0 +1,257 @@
+@keyframes btn-fade-in {
+
+  0% {
+    opacity: 0;
+    max-width: 0;
+    top: 1rem;
+  }
+
+  50% {
+    opacity: 0;
+    max-width: 40rem;
+    top: 1rem;
+  }
+
+  100% {
+    opacity: 1;
+    max-width: 40rem;
+    top: 0;
+  }
+}
+
+@keyframes loading {
+
+  0% {
+    transform: rotate(0);
+    opacity: .5;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    opacity: .5;
+  }
+}
+
+@keyframes drag-language {
+
+  0% {
+    left: -1rem;
+    opacity: 0;
+  }
+
+  50% {
+    left: 1rem;
+    opacity: 1;
+  }
+
+  75% {
+    left: 1rem;
+    opacity: 1;
+  }
+
+  100% {
+    left: 1rem;
+    opacity: 0;
+  }
+}
+
+@keyframes popup {
+
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes cloud-float {
+
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 120%;
+    opacity: 0;
+  }
+}
+
+@keyframes click-me {
+
+  0% {
+    top: 0;
+  }
+
+  25% {
+    top: .4rem;
+  }
+
+  50% {
+    top: 0;
+  }
+
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes family-fade-in {
+
+  0% {
+    opacity: 0;
+    top: 7rem;
+  }
+
+  100% {
+    opacity: 1;
+    top: 8.5rem;
+  }
+}
+
+@keyframes member-dropzone {
+
+  0% {
+    opacity: .5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .5;
+  }
+}
+
+@keyframes familyMembers-fade-in {
+
+  0% {
+    opacity: 0;
+    top: 2rem;
+  }
+
+  100% {
+    opacity: 1;
+    top: 3.5rem;
+  }
+}
+
+@keyframes tablet-rotate {
+
+  0% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(0);
+  }
+
+  40% {
+    transform: rotate(-90deg);
+  }
+
+  60% {
+    transform: rotate(-90deg);
+  }
+
+  70% {
+    transform: rotate(-90deg);
+  }
+
+  90% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@keyframes right-wrong {
+
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  5% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  15% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  20% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes member-pop {
+
+  0% {
+    transform: scale(0);
+    max-width: 0;
+  }
+
+  50% {
+    max-width: 12rem;
+    transform: scale(0);
+  }
+
+  100% {
+    max-width: 12rem;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show-language {
+
+  0% {
+    opacity: 0;
+    height: 2.1rem;
+    max-width: 0;
+  }
+
+  50% {
+    opacity: 0;
+    height: 5.6rem;
+    max-width: 20rem;
+  }
+
+  100% {
+    opacity: 1;
+    height: 5.6rem;
+    max-width: 20rem;
+  }
+}

@@ -1,0 +1,31 @@
+@font-face {
+  font-family: din_rounded;
+  src: url('./DIN_Rounded_medium.woff2') format('woff2'),
+       url('./DIN_Rounded_medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'din_rounded';
+	src: url('./DIN_Rounded_bold.woff') format('woff2'),
+		url('./DIN_Rounded_bold.woff2') format('woff');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'din_rounded';
+	src: url('./DIN_Rounded_regular.woff2') format('woff2'),
+		url('./DIN_Rounded_regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'din_rounded';
+	src: url('./DIN_Rounded_light.woff2') format('woff2'),
+		url('./DIN_Rounded_light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+}
